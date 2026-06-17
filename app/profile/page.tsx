@@ -157,12 +157,16 @@ export default function ProfilePage() {
           </div>
 
           <div className="flex items-center justify-between">
-            <form action={signOut}>
-              <button type="submit" className="btn-ghost text-red-500 hover:text-red-600 hover:bg-red-50">
-                <LogOut size={14} />
-                Sign out
-              </button>
-            </form>
+            <button
+              type="button"
+              onClick={async () => {
+                await signOut();
+  }}
+  className="btn-ghost text-red-500 hover:text-red-600 hover:bg-red-50"
+>
+  <LogOut size={14} />
+  Sign out
+</button>
             <button type="submit" disabled={isPending} className="btn-primary">
               {isPending ? (
                 <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />
