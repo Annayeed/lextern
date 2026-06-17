@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --navy-900: #0F1B2D;
+    --amber-gold: #D4A853;
+    --cream: #FAFAF8;
+  }
+
+  * {
+    @apply border-gray-200;
+  }
+
+  body {
+    @apply bg-cream text-gray-900 antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  ::selection {
+    @apply bg-amber-100 text-amber-900;
+  }
+}
+
+@layer components {
+  /* Status column left-border tabs — the signature design element */
+  .status-tab-wishlist   { @apply border-l-4 border-slate-300; }
+  .status-tab-applied    { @apply border-l-4 border-blue-400; }
+  .status-tab-followup   { @apply border-l-4 border-amber-400; }
+  .status-tab-interview  { @apply border-l-4 border-purple-400; }
+  .status-tab-offer      { @apply border-l-4 border-emerald-400; }
+  .status-tab-accepted   { @apply border-l-4 border-green-500; }
+  .status-tab-rejected   { @apply border-l-4 border-red-300; }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-navy-900 px-4 py-2.5
+           text-sm font-medium text-white transition-all duration-150
+           hover:bg-navy-800 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200
+           bg-white px-4 py-2.5 text-sm font-medium text-gray-700 transition-all duration-150
+           hover:bg-gray-50 active:scale-[0.98] disabled:opacity-50;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-red-600 px-4 py-2.5
+           text-sm font-medium text-white transition-all duration-150
+           hover:bg-red-700 active:scale-[0.98] disabled:opacity-50;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-3 py-2
+           text-sm font-medium text-gray-600 transition-all duration-150
+           hover:bg-gray-100 hover:text-gray-900 active:scale-[0.98];
+  }
+
+  .input-field {
+    @apply w-full rounded-lg border border-gray-200 bg-white px-3.5 py-2.5 text-sm
+           text-gray-900 placeholder-gray-400 transition-colors
+           focus:border-navy-700 focus:outline-none focus:ring-2 focus:ring-navy-900/10
+           disabled:bg-gray-50 disabled:text-gray-500;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-gray-700 mb-1.5;
+  }
+
+  .card {
+    @apply rounded-xl border border-gray-100 bg-white shadow-card;
+  }
+
+  .page-header {
+    @apply mb-6 flex items-center justify-between;
+  }
+
+  .page-title {
+    @apply text-2xl font-semibold text-gray-900 tracking-tight;
+  }
+
+  .page-subtitle {
+    @apply text-sm text-gray-500 mt-0.5;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { @apply bg-gray-200 rounded-full; }
+::-webkit-scrollbar-thumb:hover { @apply bg-gray-300; }
